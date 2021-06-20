@@ -1,0 +1,133 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_03143/fast && /usr/bin/make  -f CMakeFiles/cmTC_03143.dir/build.make CMakeFiles/cmTC_03143.dir/build
+make[1]: Entering directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o
+/usr/bin/x86_64-w64-mingw32-gcc   -v -o CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o   -c /opt/clion-2020.3.1/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc
+Target: x86_64-w64-mingw32
+Configured with: ../../src/configure --build=x86_64-linux-gnu --prefix=/usr --includedir='/usr/include' --mandir='/usr/share/man' --infodir='/usr/share/info' --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir='/usr/lib/x86_64-linux-gnu' --libexecdir='/usr/lib/x86_64-linux-gnu' --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --enable-shared --enable-static --disable-multilib --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --libdir=/usr/lib --enable-libstdcxx-time=yes --with-tune=generic --with-headers=/usr/x86_64-w64-mingw32/include --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libgomp --enable-languages=c,c++,fortran,objc,obj-c++,ada --enable-lto --enable-threads=win32 --program-suffix=-win32 --program-prefix=x86_64-w64-mingw32- --target=x86_64-w64-mingw32 --with-as=/usr/bin/x86_64-w64-mingw32-as --with-ld=/usr/bin/x86_64-w64-mingw32-ld --enable-libatomic --enable-libstdcxx-filesystem-ts=yes
+Thread model: win32
+gcc version 8.3-win32 20190406 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/cc1 -quiet -v -U_REENTRANT /opt/clion-2020.3.1/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccgMqfWp.s
+GNU C17 (GCC) version 8.3-win32 20190406 (x86_64-w64-mingw32)
+	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C17 (GCC) version 8.3-win32 20190406 (x86_64-w64-mingw32)
+	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 5121490c4f1199327b2ad77310585567
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o /tmp/ccgMqfWp.s
+GNU assembler version 2.31.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.31.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_03143
+/opt/clion-2020.3.1/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03143.dir/link.txt --verbose=1
+/usr/bin/x86_64-w64-mingw32-gcc     -v CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o  -o cmTC_03143 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: ../../src/configure --build=x86_64-linux-gnu --prefix=/usr --includedir='/usr/include' --mandir='/usr/share/man' --infodir='/usr/share/info' --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir='/usr/lib/x86_64-linux-gnu' --libexecdir='/usr/lib/x86_64-linux-gnu' --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --enable-shared --enable-static --disable-multilib --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --libdir=/usr/lib --enable-libstdcxx-time=yes --with-tune=generic --with-headers=/usr/x86_64-w64-mingw32/include --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libgomp --enable-languages=c,c++,fortran,objc,obj-c++,ada --enable-lto --enable-threads=win32 --program-suffix=-win32 --program-prefix=x86_64-w64-mingw32- --target=x86_64-w64-mingw32 --with-as=/usr/bin/x86_64-w64-mingw32-as --with-ld=/usr/bin/x86_64-w64-mingw32-ld --enable-libatomic --enable-libstdcxx-filesystem-ts=yes
+Thread model: win32
+gcc version 8.3-win32 20190406 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_03143.exe' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaNDsfs.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_03143.exe /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32 -L/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_03143.dir/CMakeCCompilerABI.c.o -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_03143.exe' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin'
+Unable to find the executable at any of:
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/cmTC_03143
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/Debug/cmTC_03143
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/Development/cmTC_03143
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4cbdd/fast && /usr/bin/make  -f CMakeFiles/cmTC_4cbdd.dir/build.make CMakeFiles/cmTC_4cbdd.dir/build
+make[1]: Entering directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/x86_64-w64-mingw32-g++    -v -o CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion-2020.3.1/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+Target: x86_64-w64-mingw32
+Configured with: ../../src/configure --build=x86_64-linux-gnu --prefix=/usr --includedir='/usr/include' --mandir='/usr/share/man' --infodir='/usr/share/info' --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir='/usr/lib/x86_64-linux-gnu' --libexecdir='/usr/lib/x86_64-linux-gnu' --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --enable-shared --enable-static --disable-multilib --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --libdir=/usr/lib --enable-libstdcxx-time=yes --with-tune=generic --with-headers=/usr/x86_64-w64-mingw32/include --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libgomp --enable-languages=c,c++,fortran,objc,obj-c++,ada --enable-lto --enable-threads=win32 --program-suffix=-win32 --program-prefix=x86_64-w64-mingw32- --target=x86_64-w64-mingw32 --with-as=/usr/bin/x86_64-w64-mingw32-as --with-ld=/usr/bin/x86_64-w64-mingw32-ld --enable-libatomic --enable-libstdcxx-filesystem-ts=yes
+Thread model: win32
+gcc version 8.3-win32 20190406 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/cc1plus -quiet -v -U_REENTRANT /opt/clion-2020.3.1/bin/cmake/linux/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccaDzzLF.s
+GNU C++14 (GCC) version 8.3-win32 20190406 (x86_64-w64-mingw32)
+	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/x86_64-w64-mingw32
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/backward
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include-fixed
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/include
+End of search list.
+GNU C++14 (GCC) version 8.3-win32 20190406 (x86_64-w64-mingw32)
+	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ae7a3589826a0028176d9a8a3489295b
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/bin/x86_64-w64-mingw32-as -v -o CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccaDzzLF.s
+GNU assembler version 2.31.1 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.31.1
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_4cbdd
+/opt/clion-2020.3.1/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cbdd.dir/link.txt --verbose=1
+/usr/bin/x86_64-w64-mingw32-g++      -v CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4cbdd 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/x86_64-w64-mingw32-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/lto-wrapper
+Target: x86_64-w64-mingw32
+Configured with: ../../src/configure --build=x86_64-linux-gnu --prefix=/usr --includedir='/usr/include' --mandir='/usr/share/man' --infodir='/usr/share/info' --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir='/usr/lib/x86_64-linux-gnu' --libexecdir='/usr/lib/x86_64-linux-gnu' --disable-maintainer-mode --disable-dependency-tracking --prefix=/usr --enable-shared --enable-static --disable-multilib --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --libdir=/usr/lib --enable-libstdcxx-time=yes --with-tune=generic --with-headers=/usr/x86_64-w64-mingw32/include --enable-version-specific-runtime-libs --enable-fully-dynamic-string --enable-libgomp --enable-languages=c,c++,fortran,objc,obj-c++,ada --enable-lto --enable-threads=win32 --program-suffix=-win32 --program-prefix=x86_64-w64-mingw32- --target=x86_64-w64-mingw32 --with-as=/usr/bin/x86_64-w64-mingw32-as --with-ld=/usr/bin/x86_64-w64-mingw32-ld --enable-libatomic --enable-libstdcxx-filesystem-ts=yes
+Thread model: win32
+gcc version 8.3-win32 20190406 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/:/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4cbdd.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/collect2 -plugin /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/lto-wrapper -plugin-opt=-fresolution=/tmp/cccRef9H.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_4cbdd.exe /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib/crt2.o /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/crtbegin.o -L/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32 -L/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/../../../../x86_64-w64-mingw32/lib CMakeFiles/cmTC_4cbdd.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt /usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4cbdd.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+
+
+Cannot copy output executable
+  ''
+to destination specified by COPY_FILE:
+  '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin'
+Unable to find the executable at any of:
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/cmTC_4cbdd
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/Debug/cmTC_4cbdd
+  /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/Development/cmTC_4cbdd
+
+

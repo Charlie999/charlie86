@@ -1,0 +1,55 @@
+The system is: Linux - 5.12.0-10.2-liquorix-amd64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/x86_64-w64-mingw32-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/3.17.5/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/x86_64-w64-mingw32-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/3.17.5/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_eeee8/fast && /usr/bin/make  -f CMakeFiles/cmTC_eeee8.dir/build.make CMakeFiles/cmTC_eeee8.dir/build
+make[1]: Entering directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eeee8.dir/testCCompiler.c.o
+/usr/bin/x86_64-w64-mingw32-gcc    -o CMakeFiles/cmTC_eeee8.dir/testCCompiler.c.o   -c /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_eeee8
+/opt/clion-2020.3.1/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eeee8.dir/link.txt --verbose=1
+/usr/bin/x86_64-w64-mingw32-gcc      CMakeFiles/cmTC_eeee8.dir/testCCompiler.c.o  -o cmTC_eeee8 
+make[1]: Leaving directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c5f72/fast && /usr/bin/make  -f CMakeFiles/cmTC_c5f72.dir/build.make CMakeFiles/cmTC_c5f72.dir/build
+make[1]: Entering directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c5f72.dir/testCXXCompiler.cxx.o
+/usr/bin/x86_64-w64-mingw32-g++     -o CMakeFiles/cmTC_c5f72.dir/testCXXCompiler.cxx.o -c /home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_c5f72
+/opt/clion-2020.3.1/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5f72.dir/link.txt --verbose=1
+/usr/bin/x86_64-w64-mingw32-g++       CMakeFiles/cmTC_c5f72.dir/testCXXCompiler.cxx.o  -o cmTC_c5f72 
+make[1]: Leaving directory '/home/charlie/charlie86/cmake-build-debug-mingw/CMakeFiles/CMakeTmp'
+
+
+

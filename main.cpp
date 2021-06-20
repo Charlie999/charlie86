@@ -15,7 +15,7 @@
 #include "instructions.h"
 
 //#define SILENT_EXECUTION // for a major speed boost
-//#define NOREGDUMP // for a minor speed boost when simming long things
+#define NOREGDUMP // for a minor speed boost when simming long things
 
 // undefine to disable, 16/17 is pretty fast but not too fast.
 #define INSN_DELAY 16 // lol look below this basically has no unit
@@ -23,7 +23,7 @@
 
 //#define SINGLE_STEP // wait for keypress for every insn
 
-#define BOOT_DISK "../disk/MSDOS33_1.img"
+#define BOOT_DISK "../disk/BOOTSEC.BIN"
 
 unsigned long long cycles = 0;
 
@@ -76,7 +76,7 @@ void fixilog() {
 
 #define FN_ELOG(...) regdump_force(); rotatelog(); printf(__VA_ARGS__); snprintf(lastinsn,512,__VA_ARGS__); fixilog();
 
-#define VIRTUAL_MEMORY_SIZE (1024 * 1024) // 1MiB of virtual memory for now
+#define VIRTUAL_MEMORY_SIZE (1024 * 1025) // 1MiB of virtual memory for now
 
 static uint8_t* virt_memory = NULL;
 
@@ -103,7 +103,7 @@ uint32_t getstackptr() {
 callstack_t getcallstack(){
     return callstack;
 }
-void loadsector(uint16_t sid, uint32_t destination, uint16_t count, const char* file);
+int loadsector(uint16_t sid, uint32_t destination, uint16_t count, const char* file);
 unsigned long long getcycles(){
     return cycles;
 }
@@ -200,9 +200,13 @@ void interrupt(uint8_t intid) {
 
             regdump_force();
             printf("VM read sector, from %d to %d [LBA=%08X, C=%d, H=%d, S=%d, bufstart = %04X:%04X (%08X)]\n",
-                   sector, sector + amt, LBA, cylinder, head, sector, ES, BX, segcalc(REGISTER_ES, BX));
+                   sector, sector + amt, LBA, cylinder, head, sector, ES, BX, segcalc(getregval(REGISTER_ES), BX));
 
-            loadsector(LBA, segcalc(REGISTER_ES, BX), amt, BOOT_DISK);
+            int q = loadsector(LBA, segcalc(REGISTER_ES, BX), amt, BOOT_DISK);
+            if (q>0)
+                clearflag(FLAG_CARRY);
+            else
+                setflag(FLAG_CARRY);
         } else {
             printf("VM illegal disk interrupt\n");
             running = false;
@@ -255,16 +259,17 @@ void regdump() {
 
 uint8_t SEG = REGISTER_CS;
 
-void loadsector(uint16_t sid, uint32_t destination, uint16_t count, const char* file) {
+int loadsector(uint16_t sid, uint32_t destination, uint16_t count, const char* file) {
     std::ifstream input( file, std::ios::binary );
     std::vector<unsigned char> buffer(std::istreambuf_iterator<char>(input), {});
     if (buffer.size() / 512 < count || buffer.size() < (sid*512 + count*512)) {
         fprintf(stderr, "Warning: file %s doesn't contain enough data to read %d sectors (fz=%d, rq=%d). Aborting.\n", file, count, buffer.size(), (sid*512 + count*512));
         input.close();
-        return;
+        return 0;
     }
     memcpy(virt_memory + destination, buffer.data() + (sid*512), count * 512);
     printf("Loaded %d sectors from %s [sector %d] to 0x%X\n", count, file, sid, destination);
+    return count;
 }
 
 void call_xhandler(uint16_t s, uint16_t a, uint16_t rip) {
@@ -306,11 +311,19 @@ uint8_t isWriteAllowed(uint32_t addr) {
         // if out of "bios" region, prevent writes to this area of memory
         return 0;
     }
+    if (addr >= 0xFFFF0 && addr <= 0xFFFFF) { // reset vector
+        return 0;
+    }
     return 1;
 }
 
 uint16_t readWord(uint8_t seg, uint16_t off) {
     uint32_t real_addr = segcalc(getregval(seg), off);
+    return ((uint16_t)virt_memory[real_addr] + ((uint16_t)virt_memory[real_addr+1]<<8));
+}
+
+uint16_t readWordManualSeg(uint16_t seg, uint16_t off) {
+    uint32_t real_addr = segcalc(seg, off);
     return ((uint16_t)virt_memory[real_addr] + ((uint16_t)virt_memory[real_addr+1]<<8));
 }
 
@@ -383,9 +396,20 @@ int main() {
     printf("Loading bootsector..\n");
     loadsector(0, 0x7C00,1, BOOT_DISK);
     //loadsector(0, 0x7C00, 4, "../disk/BOOTSEC.BIN");
+
     loadsector(0, 0x100, 1, "../disk/BOOTROM.BIN"); // load the ROM/(BIOS i guess) at 0x100
 
-    jump(0x100);
+    virt_memory[0xFFFF0] = 0xEA; // JMP FAR 0x0000:0x0100 at reset vector
+    virt_memory[0xFFFF1] = 0x00;
+    virt_memory[0xFFFF2] = 0x01;
+    virt_memory[0xFFFF3] = 0x00;
+    virt_memory[0xFFFF4] = 0x00;
+
+    setregval(REGISTER_CS, 0xFFFF);
+    jump(0x0000); // jump to reset vector
+
+    regdump_force();
+    FN_ILOG("Starting processor..\n");
 
     // This is now handled in-VM (in the ROM)
     //if (virt_memory[0x7DFE] != 0x55 || virt_memory[0x7DFF] != 0xAA) {
@@ -2307,7 +2331,7 @@ int main() {
                     jump(IP + t);
 
                 regdump();
-                FN_ILOG("JNC 0x%04X %s [8rel]\n",IP,getflag(FLAG_ZERO)?"[not jumped]":"[jumped]");
+                FN_ILOG("JNC 0x%04X %s [8rel]\n",IP,getflag(FLAG_CARRY)?"[jumped]":"[not jumped]");
                 break;
             }
             case OPCODE_TEST_AL: {

@@ -1,0 +1,1 @@
+/usr/bin/x86_64-w64-mingw32-g++  -g  -static-libgcc -static-libstdc++ CMakeFiles/charlie86.dir/main.cpp.o CMakeFiles/charlie86.dir/video.cpp.o  -o charlie86  -lgdi32 

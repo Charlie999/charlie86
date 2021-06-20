@@ -1,30 +1,62 @@
 bits 16
+cpu 8086
 org 0x7c00
 boot:
     mov si,msg
     mov ah, 0xe
-    jmp donetext
+
+_start:
+    mov  al, 0x02
+    mov  bx, 0x7E00
+    mov  cx, 0x0001
+    xor  dh, dh
+    call read_sectors_16
+    jnc drawtext
+
+    mov si,loadfail
+    mov ah, 0xe
 .loop:
     lodsb
     or al,al
-    jz donetext
+    jz .done
     int 0x10
     jmp .loop
-donetext:
-    mov ah, 0
-    mov al, 0x13
-    int 0x10
+.done:
 
-    jmp drawtext ; jump beyond the bootsector
+    cli
+    hlt
+
+read_sectors_16:
+    push ax
+    push si
+    mov si, 0x02    ; maximum attempts - 1
+.top:
+    mov ah, 0x02    ; read sectors into memory (int 0x13, ah = 0x02)
+    int 0x13
+    jnc .end        ; exit if read succeeded
+    dec si          ; decrement remaining attempts
+    jc  .end        ; exit if maximum attempts exceeded
+    xor ah, ah      ; reset disk system (int 0x13, ah = 0x00)
+    int 0x13
+    jnc .top        ; retry if reset succeeded, otherwise exit
+.end:
+    pop si
+    pop ax
+    retn
 
 CHARLIE_START equ 30
 
 msg: db "If you're seeing this, the emulator worked!",0
+loadfail: db 10,13,10,13,"Failed to read rest of image [sectors 1-3]",0
 
 times 510 - ($-$$) db 0
 dw 0xaa55
 
 drawtext:
+    mov ah, 0
+    mov al, 0x13
+    int 0x10
+
     mov cl, 70
     mov ch, 0x17
     call drawhline

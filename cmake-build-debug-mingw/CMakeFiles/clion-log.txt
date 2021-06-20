@@ -1,0 +1,12 @@
+/opt/clion-2020.3.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/x86_64-w64-mingw32-gcc -DCMAKE_CXX_COMPILER=/usr/bin/x86_64-w64-mingw32-g++ -G "CodeBlocks - Unix Makefiles" /home/charlie/charlie86
+** Not WIN32, using MinGW stdthreads
+cmake_stdheaders_generator: output_include_path set to /home/charlie/charlie86/cmake-build-debug-mingw/mingw_stdthreads/cmake_stdheaders_generator/cmake_stdheaders_generator
+cmake_stdheaders_generator: MINGW_STDTHREADS_DIR: /home/charlie/charlie86/mingw_stdthreads
+Matched: </usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/condition_variable>
+Matched: </usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/future>
+Matched: </usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/mutex>
+Matched: </usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/shared_mutex>
+Matched: </usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/thread>
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/charlie/charlie86/cmake-build-debug-mingw

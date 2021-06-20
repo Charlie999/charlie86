@@ -155,9 +155,10 @@ void PaintWindow( HWND hwnd )
              (int)callstack.size());
     drawText(hwnd, status, statusx, statusy);
 
-
     SetPixel(hdc, 0, 0, RGB(255 * frame, 255 * frame, 255 * frame));
     frame = frame ? 0 : 1;
+
+    DeleteObject(hdc);
     EndPaint( hwnd, &ps );
 }
 

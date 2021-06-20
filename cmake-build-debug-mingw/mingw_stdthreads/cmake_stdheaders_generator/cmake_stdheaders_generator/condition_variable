@@ -1,0 +1,11 @@
+#ifdef MINGW_STDTHREADS_DETECTING_SYSTEM_HEADER 
+    #include MINGW_STDTHREADS_DETECTING_SYSTEM_HEADER
+    static_assert(false, "Prevent compilation")
+#else
+    #pragma once 
+    // both system header and mignw-stdthreads header should already have include
+    // guards. But we still add a #pragma once just to be safe.
+    
+    #include "/usr/lib/gcc/x86_64-w64-mingw32/8.3-win32/include/c++/condition_variable"
+    #include "/home/charlie/charlie86/mingw_stdthreads/mingw.condition_variable.h"
+#endif
